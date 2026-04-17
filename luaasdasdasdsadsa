@@ -17,7 +17,7 @@ local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/SadOz
 local player = game.Players.LocalPlayer
 local displayName = player.DisplayName or player.Name
 
-local window = library:AddWindow("โอปอซ่าครับพี่ | หวัดดีครับพี่ " .. displayName, {
+local window = library:AddWindow("ลุงหลาม 49 | เรื่องจริงครับพี่ " .. displayName, {
     main_color = Color3.fromRGB(138, 43, 226), -- โทนสีม่วง-น้ำเงิน (BlueViolet) ตัดกันสวยๆ
     min_size = Vector2.new(650, 870),
     can_resize = false,
@@ -530,9 +530,9 @@ local rebirthsStat = leaderstats:WaitForChild("Rebirths")
 
 local footerTimeLabel = fastStrengthFolder:AddLabel("0d 0h 0m 0s")
 footerTimeLabel.TextSize = 18
-local footerRebirthsLabel = fastStrengthFolder:AddLabel("Rebirths: 0")
+local footerRebirthsLabel = fastStrengthFolder:AddLabel("รีเบิร์ด: 0")
 footerRebirthsLabel.TextSize = 18
-local footerRebirthsGainedLabel = fastStrengthFolder:AddLabel("Rebirths ที่ฟามได้: 0")
+local footerRebirthsGainedLabel = fastStrengthFolder:AddLabel("รีเบิร์ด ที่ฟามได้: 0")
 footerRebirthsGainedLabel.TextSize = 18
 
 local startTime = tick()
@@ -553,8 +553,8 @@ end)
 local function updateRebirths()
     local current = rebirthsStat.Value
     local gained = current - initialRebirths
-    footerRebirthsLabel.Text = "Rebirths: " .. current
-    footerRebirthsGainedLabel.Text = "Rebirths Gained: " .. gained
+    footerRebirthsLabel.Text = "รีเบิร์ด: " .. current
+    footerRebirthsGainedLabel.Text = "รีเบิร์ด ที่ฟามได้: " .. gained
 end
 
 rebirthsStat.Changed:Connect(updateRebirths)
@@ -617,7 +617,7 @@ local function getStrengthRequiredForRebirth()
 end
 
 -- Switch en la library
-fastStrengthFolder:AddSwitch("Fast Rebirth", function(state)
+fastStrengthFolder:AddSwitch("รีแบบแพ็ค", function(state)
     getgenv().AutoFarming = state
 
     if state then
@@ -661,7 +661,7 @@ fastStrengthFolder:AddSwitch("Fast Rebirth", function(state)
         warn("🛑 AutoFarming DESACTIVADO")
     end
 end)
-local rebirthFolder = AutoFarm:AddFolder("Rebiths แบบไม่แพ็ค")
+local rebirthFolder = AutoFarm:AddFolder("รีเบิร์ดแบบไม่แพ็ค")
 
 -- Guardar objetivo de rebirths
 local targetRebirthAmount = nil
@@ -2520,9 +2520,9 @@ local ancientJungleRockSwitch = farmTab:AddSwitch("Ancient Jungle Rock", functio
 end)
 
 local Gift = window:AddTab("Gift")
-Gift:AddLabel("กิ๊ฟ Protein egg:").TextSize = 22
+Gift:AddLabel("กิ๊ฟไข่โปรตีน:").TextSize = 22
 
-local proteinEggLabel = Gift:AddLabel("จำนวนที่มี Protein Eggs: 0")
+local proteinEggLabel = Gift:AddLabel("จำนวนที่มีไข่โปรตีน: 0")
 proteinEggLabel.TextSize = 20
 
 local selectedEggPlayer = nil
@@ -2567,7 +2567,7 @@ end)
 
 Gift:AddLabel("กิ๊ฟน้ำสัปรด:").TextSize = 22
 
-local tropicalShakeLabel = Gift:AddLabel("จำนวนที่มี สัปรด: 0")
+local tropicalShakeLabel = Gift:AddLabel("จำนวนที่มีสัปรด: 0")
 tropicalShakeLabel.TextSize = 18
 
 local selectedShakePlayer = nil
@@ -2625,8 +2625,8 @@ local function updateItemCount()
         end
     end
 
-    proteinEggLabel.Text = "Protein Eggs: " .. proteinEggCount
-    tropicalShakeLabel.Text = "Tropical Shakes: " .. tropicalShakeCount
+    proteinEggLabel.Text = "ไข่โปรตีน: " .. proteinEggCount
+    tropicalShakeLabel.Text = "น้ำสัปรด: " .. tropicalShakeCount
 end
 
 task.spawn(function()
@@ -2639,4 +2639,4 @@ end)
 local Credits = window:AddTab("เครดิต")
 
 Credits:AddLabel("สคริปต์สร้าง By โอปอซ่า")
-Credits:AddLabel("ใครเจอบัคก็เจอไงครับงงไร")
+Credits:AddLabel("ใครเจอบัคก็เรื่องของคุณครับผมบิด")
